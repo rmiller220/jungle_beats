@@ -29,7 +29,14 @@ RSpec.describe do
     
   end
   
- 
+  it 'convert to a string' do
+    list = LinkedList.new
+    list.append("doop")
+    expect(list.to_string).to eq("doop")
+    list.append("boop")
+    expect(list.to_string).to eq("doop boop")
+
+  end
 
 end
 
