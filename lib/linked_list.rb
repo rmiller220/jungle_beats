@@ -6,9 +6,7 @@ class LinkedList
     
     @head = nil
     @count = 0
-                        #@data = nil
-                        #@next_node = nil
-                        #@tail = nil
+                      
   end
 
   def append(sound)
@@ -26,7 +24,7 @@ class LinkedList
   end
  
   def to_string
-   
+  
     #make the list's sounds into a single string
   end
   
