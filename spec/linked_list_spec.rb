@@ -26,7 +26,6 @@ RSpec.describe do
     expect(list.count).to eq(1)
     expect(list.append("boop")).to eq("boop")
     expect(list.count).to eq(2)
-    
   end
   
   it 'convert to a string' do
@@ -35,7 +34,6 @@ RSpec.describe do
     expect(list.to_string).to eq("doop")
     list.append("boop")
     expect(list.to_string).to eq("doop boop")
-
   end
 
 end
