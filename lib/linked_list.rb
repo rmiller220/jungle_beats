@@ -1,39 +1,37 @@
 class LinkedList
-  attr_accessor :head, :next_node
-  attr_reader :head, :next_node
+  attr_accessor :head, :count #:next_node
+  attr_reader :head, :count #:next_node
   
   def initialize
     
     @head = nil
-    @next_node = nil
-    @tail = nil
-    # @count = 0
+    @count = 0
+                        #@data = nil
+                        #@next_node = nil
+                        #@tail = nil
   end
 
-  def count
-    count = 0
-    if list.append
-      count += 1
-    end
-  end
-    #count the number of objects in list
-  
-  def to_string
-    
-    #make sound into a string
-  end
-    
   def append(sound)
-    Node.new(sound) 
-    if @head == nil
-       @head = sound 
-    elsif @head = sound
-      @next_node = sound
-    else @next_node = sound
-      @next_node = @tail
+    @count += 1
+    if @head.nil?
+      @head = Node.new(sound)
+    else
+      current_node = @head
+      until current_node.next_node.nil?
+        current_node = current_node.next_node
+      end
+        current_node.next_node = Node.new(sound)
     end
+      return sound
   end
+ 
+  def to_string
+   
+    #make the list's sounds into a single string
+  end
+  
+  
     
-    # input data into the list array
+    
 
 end

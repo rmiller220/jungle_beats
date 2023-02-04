@@ -8,23 +8,33 @@ RSpec.describe do
     list = LinkedList.new
     expect(list).to be_an_instance_of(LinkedList)
   end 
-
+  
   it 'creates head of linked list' do
     list = LinkedList.new
     expect(list.head).to eq(nil)
   end
-
-  it 'adds data to list' do
+  
+  it 'adds sound to head' do
     list = LinkedList.new
-    expect(list.append("doop")).to eq("doop")
-    expect(list.append("boop")).to eq("boop")
+    list.append("doop")
+    expect(list.head).to be_an_instance_of(Node)
+    expect(list.head.next_node).to eq(nil)
   end
   
+  it 'adds data to list' do
+    list = LinkedList.new
+    list.append("doop")
+    expect(list.append("doop")).to eq("doop")
+    list.append("boop")
+    expect(list.append("boop")).to eq("boop")
+    expect(list.head.next_node).to be_an_instance_of(Node)
+  end
+
   it 'counts the sounds in a list' do
     list = LinkedList.new
-    expect(list.append("doop")).to eq("doop")
+    list.append("doop")
     expect(list.count).to eq(1)
-    expect(list.append("boop")).to eq("boop")
+    list.append("boop")
     expect(list.count).to eq(2)
   end
   
