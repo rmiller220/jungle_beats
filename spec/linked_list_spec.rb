@@ -16,7 +16,6 @@ RSpec.describe do
 
   it 'adds data to list' do
     list = LinkedList.new
-    require 'pry'; binding.pry
     expect(list.append("doop")).to eq("doop")
     expect(list.append("boop")).to eq("boop")
   end
@@ -25,11 +24,12 @@ RSpec.describe do
     list = LinkedList.new
     expect(list.append("doop")).to eq("doop")
     expect(list.count).to eq(1)
+    expect(list.append("boop")).to eq("boop")
+    expect(list.count).to eq(2)
+    
   end
   
-  it 'convert to a string' do
-    list = LinkedList.new
-  end
+ 
 
 end
 
