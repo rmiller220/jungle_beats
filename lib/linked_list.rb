@@ -24,12 +24,14 @@ class LinkedList
   end
  
   def to_string
-  
+    string = ""
+    current_node = @head
+    until current_node.nil?
+      string << "#{current_node.sound} "
+      current_node = current_node.next_node
+    end
+    string.strip 
     #make the list's sounds into a single string
   end
-  
-  
-    
-    
 
 end
