@@ -66,6 +66,16 @@ class LinkedList
     array[index..index + number].join(" ")
     #pick a spot in the array, list that sound and the determined number of sounds after
   end
-  
+  def pop
+    count -= 1
+    pop_array = []
+    if head.current_node == nil
+      pop_array << @head
+      @head = nil
+      pop_array
+    end
+    
+    #delete the last element of the linked list, return that sound
+  end
 
 end
