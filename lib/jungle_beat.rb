@@ -1,10 +1,11 @@
 class JungleBeat
-  attr_accessor :list
+  attr_accessor :list, :voice, :rate
   
   def initialize()
 
     @list = LinkedList.new
-
+    @voice = "Boing"
+    @rate = 500
 
   end
     
@@ -17,6 +18,10 @@ class JungleBeat
   end
   def count
     list.count
+  end
+  def play
+    sound_list = list.to_string
+    p `say -r 1000 -v Samantha #{sound_list}`
   end
   
 end
