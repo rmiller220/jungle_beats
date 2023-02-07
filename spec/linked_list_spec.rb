@@ -32,7 +32,6 @@ RSpec.describe do
   
   it 'counts the sounds in a list' do
     list = LinkedList.new
-    #require 'pry'; binding.pry
     list.append("doop")
     expect(list.count).to eq(1)
     list.append("boop")
@@ -52,12 +51,9 @@ RSpec.describe do
     list.append("zap")
     expect(list.to_string).to eq("zap")
     list.append("zoo")
-    # list.prepend("zip")
-    #require 'pry'; binding.pry
     expect(list.prepend("zip")).to eq("zip")
     expect(list.to_string).to eq("zip zap zoo")
     expect(list.count).to eq(3)
-    
   end
   
   it 'inserts sound at index position' do
@@ -65,7 +61,6 @@ RSpec.describe do
     list.append("zap")
     list.append("zoo")
     list.prepend("zip")
-    # require 'pry'; binding.pry
     expect(list.insert(1, "woo")).to eq("woo")
     expect(list.to_string).to eq("zip woo zap zoo")
   end
@@ -77,8 +72,9 @@ RSpec.describe do
     list.prepend("zip")
     list.insert(3, "woo")
     expect(list.to_string).to eq("zip zap zoo woo")
-    expect(list.find(2, 1)).to eq("zoo woo")
-    expect(list.find(1, 2)).to eq("zap zoo woo")
+    expect(list.find(2, 1)).to eq("zoo")
+    expect(list.find(1, 2)).to eq("zap zoo")
+
     
   end
 
@@ -103,7 +99,6 @@ RSpec.describe do
     list.prepend("zip")
     list.insert(1, "woo")
     expect(list.to_string).to eq("zip woo zap zoo dee")
-    # require 'pry'; binding.pry
     expect(list.pop).to eq("dee")
     expect(list.to_string).to eq("zip woo zap zoo")  
     expect(list.pop).to eq("zoo")
