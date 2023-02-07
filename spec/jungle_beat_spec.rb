@@ -25,7 +25,7 @@ RSpec.describe do
     jb = JungleBeat.new
     list = LinkedList.new
     jb.append("zip zap zoo")
-    require 'pry'; binding.pry
+    # require 'pry'; binding.pry
     expect(jb.count).to eq(3)
     jb.append("dip dap doo")
     expect(jb.count).to eq(6)
@@ -34,7 +34,7 @@ RSpec.describe do
   it 'defines a play method' do
     jb = JungleBeat.new
     list = LinkedList.new
-    jb.append("zip zap zoo dip dap doo")
+    jb.append("zip zap zoo zip zap zoo")
     expect(jb.count).to eq(6)
     jb.play
   

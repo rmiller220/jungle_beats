@@ -46,12 +46,10 @@ class LinkedList
     end
     string.strip 
   end
-  
+
   def insert(index, data)
     current_node = @head
-    # if index == 0
-    #   @head = data
-    # end
+    
     (index - 1).times do
       # if current_node.nil
         current_node = current_node.next_node
@@ -68,7 +66,7 @@ class LinkedList
   end
   def find(index, number)
     array = self.to_string.split(" ") #
-    array[index..index + number].join(" ")
+    array[index..index + number - 1].join(" ")
     #pick a spot in the array, list that sound and the determined number of sounds after
   end
   def pop(num = 1)
@@ -87,8 +85,6 @@ class LinkedList
       current_node.next_node = nil
     end 
     pop_array.join(" ")
-    
-    #delete the last element of the linked list, return that sound
   end
 
 end
