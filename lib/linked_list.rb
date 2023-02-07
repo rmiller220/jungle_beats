@@ -54,7 +54,7 @@ class LinkedList
       end
       new_node = Node.new(data)
       new_node.next_node = current_node.next_node
-      current_node.next_node = new_node
+      current_node.next_node = new_node.data
       #add a new data to node, and choose the position
   end
   def includes?(data)
@@ -66,14 +66,22 @@ class LinkedList
     array[index..index + number].join(" ")
     #pick a spot in the array, list that sound and the determined number of sounds after
   end
-  def pop
-    count -= 1
+  def pop(num = 1)
     pop_array = []
-    if head.current_node == nil
-      pop_array << @head
+    current_node = @head
+    if head.next_node == nil
+      pop_array << @head.data
       @head = nil
-      pop_array
+      return pop_array
     end
+    num.times do
+      until current_node.next_node.next_node == nil
+        current_node = current_node.next_node
+      end
+      pop_array << current_node.next_node.data
+      current_node.next_node = nil
+    end 
+    pop_array.join(" ")
     
     #delete the last element of the linked list, return that sound
   end
