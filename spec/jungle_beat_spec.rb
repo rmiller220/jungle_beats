@@ -8,7 +8,7 @@ RSpec.describe do
   it 'exists' do
     jb = JungleBeat.new
     list = LinkedList.new
-    require 'pry'; binding.pry
+    # require 'pry'; binding.pry
     expect(jb.list).to be_an_instance_of(LinkedList)
     expect(jb.list.head).to eq(nil)
   end
@@ -30,6 +30,14 @@ RSpec.describe do
     jb.append("dip dap doo")
     expect(jb.count).to eq(6)
   end
-
+  
+  it 'defines a play method' do
+    jb = JungleBeat.new
+    list = LinkedList.new
+    jb.append("zip zap zoo dip dap doo")
+    expect(jb.count).to eq(6)
+    jb.play
+  
+  end
 
 end
