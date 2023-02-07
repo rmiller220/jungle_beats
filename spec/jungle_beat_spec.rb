@@ -25,8 +25,10 @@ RSpec.describe do
     jb = JungleBeat.new
     list = LinkedList.new
     jb.append("zip zap zoo")
+    require 'pry'; binding.pry
     expect(jb.count).to eq(3)
-
+    jb.append("dip dap doo")
+    expect(jb.count).to eq(6)
   end
 
 
