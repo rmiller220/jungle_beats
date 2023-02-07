@@ -1,5 +1,5 @@
 class JungleBeat
-  attr_accessor :list, :voice, :rate
+  attr_accessor :list
   
   def initialize()
     @list = LinkedList.new
