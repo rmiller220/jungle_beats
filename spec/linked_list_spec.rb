@@ -52,7 +52,7 @@ RSpec.describe do
     list.append("zap")
     expect(list.to_string).to eq("zap")
     list.append("zoo")
-    list.prepend("zip")
+    # list.prepend("zip")
     #require 'pry'; binding.pry
     expect(list.prepend("zip")).to eq("zip")
     expect(list.to_string).to eq("zip zap zoo")
@@ -65,7 +65,7 @@ RSpec.describe do
     list.append("zap")
     list.append("zoo")
     list.prepend("zip")
-    list.insert(1, "woo")
+    # require 'pry'; binding.pry
     expect(list.insert(1, "woo")).to eq("woo")
     expect(list.to_string).to eq("zip woo zap zoo")
   end
@@ -95,7 +95,7 @@ RSpec.describe do
 
   end
 
-  xit 'removes last sound from the list' do
+  it 'removes last sound from the list' do
     list = LinkedList.new
     list.append("zap")
     list.append("zoo")
@@ -103,9 +103,9 @@ RSpec.describe do
     list.prepend("zip")
     list.insert(1, "woo")
     expect(list.to_string).to eq("zip woo zap zoo dee")
-    list.pop
+    # require 'pry'; binding.pry
     expect(list.pop).to eq("dee")
-    list.pop
+    expect(list.to_string).to eq("zip woo zap zoo")  
     expect(list.pop).to eq("zoo")
     expect(list.to_string).to eq("zip woo zap")
 
