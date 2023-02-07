@@ -46,15 +46,20 @@ class LinkedList
     end
     string.strip 
   end
+  
   def insert(index, data)
     current_node = @head
+    # if index == 0
+    #   @head = data
+    # end
     (index - 1).times do
       # if current_node.nil
         current_node = current_node.next_node
       end
       new_node = Node.new(data)
       new_node.next_node = current_node.next_node
-      current_node.next_node = new_node.data
+      current_node.next_node = new_node
+      new_node.data
       #add a new data to node, and choose the position
   end
   def includes?(data)
